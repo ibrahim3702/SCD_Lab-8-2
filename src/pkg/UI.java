@@ -15,6 +15,7 @@ import javax.swing.SwingUtilities;
 public class UI extends JFrame {
 	private JTextField searchField;
 	private JButton searchButton;
+	private JButton button2;
 	private JTextArea resultArea;
 	public UI() {
 		setTitle("Book Search Application");
@@ -28,6 +29,8 @@ public class UI extends JFrame {
 		topPanel.add(searchField);
 		searchButton = new JButton("Search");
 		topPanel.add(searchButton);
+		button2 = new JButton("button");
+		topPanel.add(button2);
 		add(topPanel, BorderLayout.NORTH);
 		resultArea = new JTextArea();
 		resultArea.setEditable(false);
@@ -35,6 +38,7 @@ public class UI extends JFrame {
 		searchButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				designUI();
 			}
 		});
 	}
@@ -53,5 +57,6 @@ public class UI extends JFrame {
 	private void designUI()
 	{
 		this.searchButton.setBackground(Color.green);
+		this.setSize(600,500);
 	}
 }
